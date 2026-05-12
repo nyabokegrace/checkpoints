@@ -1,30 +1,30 @@
-package main 
+package main
 
-import(
+import (
 	"strconv"
-	 
+
 	"fmt"
 )
 
 func CountRepeats(s string) string {
-	 if s == "" {
+	if s == "" {
 		return ""
-	 }
-	 var result string
-	 var counter = 1
+	}
+	var result string
+	var counter = 1
 
-	 for i := 0; i < len(s); i++ {
+	for i := 0; i < len(s); i++ {
 		if i+1 < len(s) && string(s[i]) == string(s[i+1]) {
 			counter++
 		} else {
-			result = result + string (s[i])
+			result = result + string(s[i])
 			if counter > 1 {
 				result = result + strconv.Itoa(counter)
 			}
 			counter = 1
 		}
-	 }
-return result
+	}
+	return result
 }
 
 func main() {
