@@ -2,19 +2,33 @@ package main
 
 import "fmt"
 
-func Itoa(a int) string{
-	if len(a)==0 {
-		return "0"
+func CamelToSnakeCase(s string) string {
+	if s == "" {
+		return s
 	}
-	sign := ""
-	if a<0 {
-		sign = "-"
-		a = -a
+	result := ""
+	n := len(s)
+
+	last := s[n-1]
+
+	for i, v := range s {
+		if last >= 'A' && last <= 'Z' {
+			return s
+		}
+		if i > 0 && !(v >= 'a' && v <= 'z') && !(v >= 'A' && v <= 'Z') {
+			return s
+		}
+		if i > 0 && (v >= 'A' && v <= 'Z') && (s[i-1] >= 'A' && s[i-1] <= 'Z') {
+			return s
+		}
+		if i>0 && v >= 'A' && v <= 'Z' {
+			result += "_"
+		}
+		result= result + string(v)
 	}
-	s := ""
-for a> 0 {
-	s=string(rune('0'+a%10)) + s
-	a /= 10
+	return result
 }
-return sign + s
+
+func main() {
+	fmt.Println(CamelToSnakeCase("CamelCase"))
 }
