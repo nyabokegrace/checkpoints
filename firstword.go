@@ -1,9 +1,9 @@
-package main 
+package main
 
 import "fmt"
 
-func FirstWord(s string) string{
-	if len(s) == 0{
+func FirstWord(s string) string {
+	if len(s) == 0 {
 		return "invalid"
 	}
 	result := ""
@@ -13,10 +13,10 @@ func FirstWord(s string) string{
 		i++
 	}
 	for i < len(s) && s[i] != ' ' {
-		result = result + string (s[i])
+		result = result + string(s[i])
 		i++
-}
-return result + "\n"
+	}
+	return result + "\n"
 }
 
 func main() {

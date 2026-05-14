@@ -6,8 +6,8 @@ func hashCode(s string) string {
 	result := ""
 	n := len(s)
 
-	for i:=0 ; i < n; i++ {
-		code := (int(s[i]) + n) %127
+	for i := 0; i < n; i++ {
+		code := (int(s[i]) + n) % 127
 		if code < 32 {
 			code += 33
 		}
