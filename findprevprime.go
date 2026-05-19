@@ -28,5 +28,5 @@ func findPrevPrime(a int) int {
 }
 
 func main() {
-	fmt.Println(findPrevPrime(20))
+	fmt.Println(findPrevPrime(1000000))
 }

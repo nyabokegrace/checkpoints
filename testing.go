@@ -1,8 +1,13 @@
+<<<<<<< HEAD
 package main
+=======
+package main 
+>>>>>>> 5098bce (changes)
 
 import "fmt"
 
 func CamelToSnakeCase(s string) string {
+<<<<<<< HEAD
 	if s == "" {
 		return s
 	}
@@ -32,3 +37,14 @@ func CamelToSnakeCase(s string) string {
 func main() {
 	fmt.Println(CamelToSnakeCase("CamelCase"))
 }
+=======
+	result:= ""
+	n :=len(s)
+
+	if s == "" {
+		return s
+	}
+	
+	for i,v := range s
+}
+>>>>>>> 5098bce (changes)

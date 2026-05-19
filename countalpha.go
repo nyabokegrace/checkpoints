@@ -5,7 +5,7 @@ import "fmt"
 func CountAlpha(s string) int {
 	count := 0
 	for _, ch := range s {
-		if (ch >= 'a' && ch <= 'z') || (ch >= 'A' && ch <= 'Z') || (ch != 'A' && ch != 'Z') || (ch != 'a' && ch != 'z') {
+		if (ch >= 'a' && ch <= 'z') || (ch >= 'A' && ch <= 'Z') 
 			count++
 		}
 	}
