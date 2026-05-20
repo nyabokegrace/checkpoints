@@ -1,4 +1,4 @@
-// takes a slice and an integer as arguments then divides the slice into groups equal to the intrger provided.
+// takes a slice and an integer as arguments then divides the slice into groups equal to the integer provided.
 package main
 
 import (
