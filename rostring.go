@@ -38,7 +38,7 @@ func main() {
 		z01.PrintRune(' ')
 	}
 	for _, v := range words[0] {
-		z01.PrintRune(r)
+		z01.PrintRune(v)
 	}
 	z01.PrintRune('\n')
 }
