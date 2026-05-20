@@ -2,36 +2,36 @@ package main
 
 import "fmt"
 
-func wordflip(s string)string{
-	w:= []string{}
-	t:=""
+func wordflip(s string) string {
+	w := []string{}
+	t := ""
 
-	for _, c:=range s{
-		if c!=' '{
-			t+=string(c)
-		}else if t!=""{
-			w=append(w, t)
-			t =""
+	for _, c := range s {
+		if c != ' ' {
+			t += string(c)
+		} else if t != "" {
+			w = append(w, t)
+			t = ""
 		}
 	}
-	if t!=""{
-		w=append(w, t)
+	if t != "" {
+		w = append(w, t)
 	}
-	if len(w)==0{
+	if len(w) == 0 {
 		return "invalid input" + "\n"
 	}
-	r:=""
-	for i:=len(w)-1; i>=0; i--{
-		r+=w[i]
+	r := ""
+	for i := len(w) - 1; i >= 0; i-- {
+		r += w[i]
 
-		if i>0{
-			r+=" "
+		if i > 0 {
+			r += " "
 		}
 	}
 	return r + "\n"
 }
 
-func main(){
+func main() {
 	fmt.Println(wordflip("My Name is non of your business"))
 	fmt.Println(wordflip("  My Name is non    of your business "))
 	fmt.Println(wordflip(""))

@@ -1,4 +1,4 @@
-package main 
+package main
 
 import (
 	"fmt"
@@ -6,7 +6,7 @@ import (
 )
 
 func main() {
-	if len(os.Args)!= 2 {
+	if len(os.Args) != 2 {
 		fmt.Println("\n")
 		return
 	}
@@ -14,17 +14,17 @@ func main() {
 	word := false
 	firstword := true
 
-	for _,c := range s {
-		if c !=' ' && c!= '\t' {
+	for _, c := range s {
+		if c != ' ' && c != '\t' {
 			if !word && !firstword {
 				fmt.Println(" ")
 			}
 			fmt.Println(c)
 			word = true
-			firstword= false
+			firstword = false
 		} else {
-			word = false 
-		}	
+			word = false
+		}
 	}
 	fmt.Println("\n")
 }

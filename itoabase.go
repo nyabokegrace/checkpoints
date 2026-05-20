@@ -3,25 +3,25 @@ package main
 import "fmt"
 
 func ItoaBase(n, base int) string {
-	if base< 2 || base > 16 {
+	if base < 2 || base > 16 {
 		return " "
 	}
-	sign:= " "
-	if n <0 {
+	sign := " "
+	if n < 0 {
 		sign = "-"
-		n=-n
+		n = -n
 	}
-	if n == 0{
+	if n == 0 {
 		return "0"
 	}
 	result := " "
-	for n>0 {
-		result=string(rune('0'+ n%base)) + result
-		n/=base
+	for n > 0 {
+		result = string(rune('0'+n%base)) + result
+		n /= base
 	}
 	return sign + result
 }
 
-func main(){
+func main() {
 	fmt.Println(ItoaBase(10, 2))
 }
