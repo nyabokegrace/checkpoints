@@ -12,7 +12,7 @@ func RetainFirstHalf(s string) string {
 	half := len(s) / 2
 	return s[:half]
 }
-
+// return (:len(s)/2))
 func main() {
 	fmt.Println(RetainFirstHalf("grace"))
 	fmt.Println(RetainFirstHalf("Clay"))
