@@ -10,15 +10,15 @@ func FirstWord(s string) string {
 	i := 0
 
 	for i < len(s) && s[i] == ' ' {
-		i++
+		i++ //loop through s even after encountering a space
 	}
 	for i < len(s) && s[i] != ' ' {
 		result = result + string(s[i])
-		i++
+		i++ // loop through s  and if s[i] is not a space add result (that is the end of the first word)
 	}
 	return result + "\n"
 }
-
+//return the result
 func main() {
 	fmt.Println(FirstWord("Hello world"))
 	fmt.Println(FirstWord(""))
