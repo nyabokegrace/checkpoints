@@ -26,7 +26,7 @@ func NotDecimal(dec string) string {
 	}
 
 	res := ""
-	started:=
+	started:= false
 	for i := 0; i < len(dec); i++ {
 		if i != dot {
 			res += string(dec[i])

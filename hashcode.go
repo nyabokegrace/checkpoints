@@ -19,3 +19,5 @@ func hashCode(s string) string {
 func main() {
 	fmt.Println(hashCode("Hello"))
 }
+
+//converts a string to its hashcodevalue//
