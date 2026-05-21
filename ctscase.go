@@ -24,7 +24,7 @@ func CamelToSnakeCase(s string) string {
 			return s //if lastletter is in caps
 		}
 		if i > 0 && v >= 'A' && v <= 'Z' {
-			result += "_" // gets a caps anywhere in the middle of the string, add a _ before it using append
+			result += "_" // gets a caps anywhere in the middle of the string, add a _ before it 
 		}
 		result += string(v)
 	}
