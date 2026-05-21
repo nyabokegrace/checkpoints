@@ -12,7 +12,7 @@ func isPrime(b int) bool {
 		}
 	}
 	return true
-}
+} // checks for a prime number//
 
 func findPrevPrime(a int) int {
 	if a < 2 {
@@ -22,7 +22,7 @@ func findPrevPrime(a int) int {
 		if isPrime(a) {
 			return a
 		}
-		a--
+		a-- //check nmbers before a
 	}
 	return 0
 }
