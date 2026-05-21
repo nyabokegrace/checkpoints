@@ -8,9 +8,8 @@ func CountAlpha(s string) int {
 		if (ch >= 'a' && ch <= 'z') || (ch >= 'A' && ch <= 'Z') 
 			count++
 		}
+		return count
 	}
-	return count
-}
 
 func main() {
 	fmt.Println(CountAlpha("grac*#e"))

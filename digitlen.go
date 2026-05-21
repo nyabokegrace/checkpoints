@@ -22,3 +22,5 @@ func main() {
 	fmt.Println(DigitLen(-64, 2))
 	fmt.Println(DigitLen(0, 2))
 }
+
+// divides number by a given base then gives the number of times its been divided

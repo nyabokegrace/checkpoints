@@ -33,3 +33,5 @@ func main() {
 	}
 	fmt.Print("\n")
 }
+
+//similar to wordflip but takes the string as an argument instead
