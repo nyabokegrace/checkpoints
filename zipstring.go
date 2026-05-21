@@ -40,5 +40,5 @@ func ZipString(s string) string {
 }
 
 func main()  {
-	fmt.Println(ZipString("aaaaaaaaaaaaaaaqqwedeeetrtrrgghghhyy"))
+	fmt.Println(ZipString("aaaaaaaaaaaaaaaqqwedeeetrtrrgghaghhyy"))
 }
