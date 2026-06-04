@@ -20,5 +20,5 @@ func repeatAlpha(s string) string {
 }
 
 func main() {
-	fmt.Println(repeatAlpha("abc"))
+	fmt.Println(repeatAlpha("abcdefghijklmnopqrstuvwxyz"))
 }
