@@ -1,22 +1,30 @@
+working piscine version with z01.PrintRune 
+
 package main
 
 import (
-	"fmt"
 	"os"
-) //for piscine import os only//
+
+	"github.com/01-edu/z01"
+)
 
 func main() {
 	if len(os.Args) != 4 {
 		return
 	}
-//for piscine initialize result:=""//
-	str, old, new := os.Args[1], os.Args[2][0], os.Args[3][0]
-	for i := 0; i < len(str); i++ {
-		if str[i] == old {
-			fmt.Printf("%c", new) //return result+=string(new)//
+	str1, str2, str3 := os.Args[1], os.Args[2][0], os.Args[3][0]
+	for i := 0; i < len(str1); i++ {
+		if str1[i] == str2 {
+			z01.PrintRune(rune(str3))
 		} else {
-			fmt.Printf("%c", str[i])//return result+=string(s[i])//
+			z01.PrintRune(rune(str1[i]))
 		}
 	}
-	fmt.Println()
+	z01.PrintRune('\n')
 }
+
+
+//output
+//PS C:\Users\Clay\checkpoints> go run testing.go "hello" "e" "a"
+//hallo
+//PS C:\Users\Clay\checkpoints> 
