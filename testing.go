@@ -2,7 +2,7 @@ package main
 
 import "fmt"
 
-func ZipString(s string) string {
+func CountRepeats(s string) string {
 	res := ""
 	for i := 0; i < len(s); i++ {
 		count := 1
@@ -10,14 +10,19 @@ func ZipString(s string) string {
 			count++
 			i++
 		}
-		res += string(rune(count+'0')) + string(s[i])
+		if count < 2 {
+			res += string(s[i])
+		} else {
+			res += string(s[i]) + string(rune(count+'0'))
+		}
+
 	}
 	return res
 }
 
 func main() {
-	fmt.Println(ZipString("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabbc"))
-	fmt.Println(ZipString("gggggggggggrraaaceee"))
+	fmt.Println(ZipString("aaaaaaabbc"))
+	fmt.Println(ZipString("gggggggrraaaceee"))
 	fmt.Println(ZipString(""))
 	fmt.Println(ZipString("clay"))
 	fmt.Println(ZipString("Beckham"))
