@@ -1,35 +1,41 @@
 package main
 
-import ("unicode"
-"fmt")
+import "fmt"
 
-func LongestWord(s string)string {
-	if s == "" {
-		return ""
-	}
-	runes:=[]rune(s)
-	longest, word := "", ""
-	
-	for i:=0; i<len(runes); i++ {
-		if unicode.IsLetter(runes[i]) {
-			word+=string(runes[i])
-			for i+1 < len(runes) && unicode.IsLetter(runes[i+1]) {
-				i++
-				word+=string(runes[i])
+func LongestWord(arr string) string {
+	longest := ""
+	current := ""
+	hasDigit := false // Tracks if the current word has any numbers
+
+	for i := 0; i < len(arr); i++ {
+		if arr[i] != ' ' && arr[i] != '\t' && arr[i] != '\n' {
+			// If the character is a digit, flag it
+			if arr[i] >= '0' && arr[i] <= '9' {
+				hasDigit = true
 			}
-             if i+1 < len (runes) && (runes[i+1]) == '.' || runes[i+1] == ',' || runes[i+1] == '!' || runes[i+1] == '?' || runes[i+1] == ';' || runes[i+1] == ':'{
-				word+=string(runes[i+1])
-				i++
-			 }
-			 if len([]rune(word))> len([]rune(longest)) {
-				longest=word
-			 }
+			current += string(arr[i])
+		} else {
+			// Only check the length if the word has NO digits
+			if !hasDigit && len(current) > len(longest) {
+				longest = current
 			}
-			word=""
+			current = "" 
+			hasDigit = false // Reset the flag for the next word
 		}
-		return longest
 	}
 
-	func main(){
-		fmt.Println(LongestWord("Hello World!"))
+	// Check the final word remaining after the loop ends
+	if !hasDigit && len(current) > len(longest) {
+		longest = current
 	}
+
+	return longest + "\n"
+}
+
+func main() {
+	fmt.Println(LongestWord("Hello i am a girl"))               // Expected: "Hello"
+	fmt.Println(LongestWord("Hel2lo i am a girl"))             // Expected: "girl" ("Hel2lo" is ignored)
+	fmt.Println(LongestWord("Hello i am a girrrrrrrrrl"))       // Expected: "girrrrrrrrrl"
+	fmt.Println(LongestWord("Hello i am a umemen2yanawekoce"))   // Expected: "umemenyanawekoce"
+	fmt.Println(LongestWord("123 123uijjj42"))                  // Expected: "" (Both have digits)
+}
