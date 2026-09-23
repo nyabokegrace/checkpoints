@@ -18,7 +18,8 @@ func FirstWord(s string) string {
 	}
 	return result + "\n"
 }
-//return the result
+
+// return the result
 func main() {
 	fmt.Println(FirstWord("Hello world"))
 	fmt.Println(FirstWord(""))

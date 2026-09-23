@@ -19,7 +19,7 @@ func LongestWord(arr string) string {
 			if !hasDigit && len(current) > len(longest) {
 				longest = current
 			}
-			current = "" 
+			current = ""
 			hasDigit = false // Reset the flag for the next word
 		}
 	}
@@ -33,9 +33,9 @@ func LongestWord(arr string) string {
 }
 
 func main() {
-	fmt.Println(LongestWord("Hello i am a girl"))               // Expected: "Hello"
+	fmt.Println(LongestWord("Hello i am a girl"))              // Expected: "Hello"
 	fmt.Println(LongestWord("Hel2lo i am a girl"))             // Expected: "girl" ("Hel2lo" is ignored)
-	fmt.Println(LongestWord("Hello i am a girrrrrrrrrl"))       // Expected: "girrrrrrrrrl"
-	fmt.Println(LongestWord("Hello i am a umemen2yanawekoce"))   // Expected: "umemenyanawekoce"
-	fmt.Println(LongestWord("123 123uijjj42"))                  // Expected: "" (Both have digits)
+	fmt.Println(LongestWord("Hello i am a girrrrrrrrrl"))      // Expected: "girrrrrrrrrl"
+	fmt.Println(LongestWord("Hello i am a umemen2yanawekoce")) // Expected: "umemenyanawekoce"
+	fmt.Println(LongestWord("123 123uijjj42"))                 // Expected: "" (Both have digits)
 }

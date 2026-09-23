@@ -1,4 +1,4 @@
-//working piscine version with z01.PrintRune 
+//working piscine version with z01.PrintRune
 
 package main
 
@@ -23,8 +23,7 @@ func main() {
 	z01.PrintRune('\n')
 }
 
-
 //output
 //PS C:\Users\Clay\checkpoints> go run testing.go "hello" "e" "a"
 //hallo
-//PS C:\Users\Clay\checkpoints> 
+//PS C:\Users\Clay\checkpoints>

@@ -9,12 +9,14 @@ func FifthAndSkip(str string) string {
 			clean += string(c)
 		}
 	}
-	
+
 	if len(clean) < 5 {
-		if str == "" { return "\n" }
+		if str == "" {
+			return "\n"
+		}
 		return "Invalid Input\n"
 	}
-	
+
 	filtered := ""
 	for i := 0; i < len(clean); i++ {
 		if i%6 < 5 {
@@ -32,6 +34,6 @@ func FifthAndSkip(str string) string {
 	return result + "\n"
 }
 
-func main()  {
+func main() {
 	fmt.Println(FifthAndSkip("abcdefghijklmnopqrstuwxyz"))
 }

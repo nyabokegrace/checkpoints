@@ -12,7 +12,7 @@ func CamelToSnakeCase(s string) string {
 		//checking for invalidity of characters in camel case//
 
 		if s == "" {
-			return "" // if string is empty 
+			return "" // if string is empty
 		}
 		if !(v >= 'a' && v <= 'z') && !(v >= 'A' && v <= 'Z') {
 			return s //if caharcter is not part of the alphabet
@@ -24,7 +24,7 @@ func CamelToSnakeCase(s string) string {
 			return s //if lastletter is in caps
 		}
 		if i > 0 && v >= 'A' && v <= 'Z' {
-			result += "_" // gets a caps anywhere in the middle of the string, add a _ before it 
+			result += "_" // gets a caps anywhere in the middle of the string, add a _ before it
 		}
 		result += string(v)
 	}
