@@ -1,35 +1,29 @@
 package main
 
-import (
-	"fmt"
-)
+import "github.com/01-edu/z01"
 
 func PrintMemory(arr [10]byte) {
-	// Print hexadecimal representation
-	for i, b := range arr {
-		fmt.Printf("%02x", b)
+	hex := "0123456789abcdef"
 
-		if (i+1)%4 == 0 {
-			fmt.Print("\n")
+	for i, b := range arr {
+		z01.PrintRune(rune(hex[b>>4]))
+		z01.PrintRune(rune(hex[b&0x0f]))
+
+		if i == 3 || i == 7 || i == 9 {
+			z01.PrintRune('\n')
 		} else {
-			fmt.Print(" ")
+			z01.PrintRune(' ')
 		}
 	}
 
-	// If last line is not complete
-	if len(arr)%4 != 0 {
-		fmt.Println()
-	}
-
-	// Print ASCII representation
 	for _, b := range arr {
 		if b >= 32 && b <= 126 {
-			fmt.Printf("%c", b)
+			z01.PrintRune((rune(b)))
 		} else {
-			fmt.Print(".")
+			z01.PrintRune('.')
 		}
 	}
-	fmt.Println()
+	z01.PrintRune('\n')
 }
 
 func main() {
