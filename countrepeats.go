@@ -8,6 +8,7 @@ func CountRepeats(s string) string {
 	if s == "" {
 		return ""
 	}
+
 	result := ""
 	counter := 1
 
@@ -15,16 +16,26 @@ func CountRepeats(s string) string {
 		if s[i] == s[i+1] {
 			counter++
 		} else {
-			result += string(s[i]) + string(rune(counter+'0'))
+			result += string(s[i])
+			// Only append the counter if it's greater than 1
+			if counter > 1 {
+				result += string(rune(counter + '0'))
+			}
 			counter = 1
 		}
 	}
-	result += string(s[len(s)-1]) + string(rune(counter+'0'))
+
+	// Handle the last character group
+	result += string(s[len(s)-1])
+	if counter > 1 {
+		result += string(rune(counter + '0'))
+	}
+
 	return result
 }
 
 func main() {
-	fmt.Println(CountRepeats("aaabbbccc"))
-	fmt.Println(CountRepeats("abc"))
-	fmt.Println(CountRepeats("abbccc"))
+	fmt.Println(CountRepeats("aaabbbccc")) // Output: a3b3c3
+	fmt.Println(CountRepeats("abc"))       // Output: abc
+	fmt.Println(CountRepeats("abbccc"))    // Output: ab2c3
 }
